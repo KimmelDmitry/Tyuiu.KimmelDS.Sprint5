@@ -34,6 +34,13 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
                 .Select(n => n.Value)
                 .ToList();
 
+            // Для отладки выводим все найденные числа
+            Console.WriteLine("Найденные числа:");
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
             // Проверка, что список не пустой
             if (!numbers.Any())
             {

@@ -36,7 +36,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28
 
             DataService ds = new DataService();
 
-            var result = ds.LoadFromDataFile(string.Empty);
+            var result = ds.LoadFromDataFile("С:\\DataSprint5\\InPutDataFileTask5V28.txt");
             Console.WriteLine(result);
             Console.ReadKey();
         }
