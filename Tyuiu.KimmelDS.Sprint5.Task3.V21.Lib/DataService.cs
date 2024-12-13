@@ -6,22 +6,27 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            var res = "QmDl0CLb+z8=";
+            // Вычисляем значение выражения
             double result = (Math.Pow(x, 2) + 1) / Math.Sqrt(4 * Math.Pow(x, 3) - 3);
 
+            // Округляем результат до трёх знаков после запятой
             result = Math.Round(result, 3);
 
+            // Генерируем путь для сохранения файла в Temp
             string filePath = Path.Combine(Path.GetTempPath(), "OutPutFileTask3.bin");
 
+            // Сохраняем результат в бинарный файл
             using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.Create)))
             {
                 writer.Write(result);
             }
 
+            // Выводим результат на консоль
             Console.WriteLine($"Вычисленное значение: {result}");
             Console.WriteLine($"Файл сохранен по пути: {filePath}");
 
-            return res;
+            // Возвращаем путь к файлу
+            return filePath;
         }
     }
 }
