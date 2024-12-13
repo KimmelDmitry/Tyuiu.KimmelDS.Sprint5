@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Globalization;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KimmelDS.Sprint5.Task4.V6.Lib
 {
@@ -18,8 +19,8 @@ namespace Tyuiu.KimmelDS.Sprint5.Task4.V6.Lib
             // Выводим содержимое файла для отладки
             Console.WriteLine($"Содержимое файла: {fileContent}");
 
-            // Преобразуем значение в вещественное число
-            if (double.TryParse(fileContent, out double x))
+            // Преобразуем значение в вещественное число с учётом локали
+            if (double.TryParse(fileContent, NumberStyles.Any, CultureInfo.InvariantCulture, out double x))
             {
                 // Вычисляем значение по формуле: y = 1 / cos(x) + 2.2 * x^2
                 double y = 1 / Math.Cos(x) + 2.2 * Math.Pow(x, 2);
