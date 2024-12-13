@@ -15,6 +15,9 @@ namespace Tyuiu.KimmelDS.Sprint5.Task4.V6.Lib
             // Читаем значение из файла
             string fileContent = File.ReadAllText(path).Trim();
 
+            // Выводим содержимое файла для отладки
+            Console.WriteLine($"Содержимое файла: {fileContent}");
+
             // Преобразуем значение в вещественное число
             if (double.TryParse(fileContent, out double x))
             {
@@ -26,7 +29,8 @@ namespace Tyuiu.KimmelDS.Sprint5.Task4.V6.Lib
             }
             else
             {
-                throw new FormatException("Ошибка формата данных в файле.");
+                // Если не удалось преобразовать, выводим информацию об ошибке
+                throw new FormatException($"Ошибка формата данных в файле. Не удалось преобразовать '{fileContent}' в вещественное число.");
             }
         }
     }
