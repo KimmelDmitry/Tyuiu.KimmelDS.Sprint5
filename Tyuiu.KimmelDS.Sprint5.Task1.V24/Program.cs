@@ -36,7 +36,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task1.V24
 
             DataService ds = new DataService();
 
-            var result = ds.YOURFUNCTION();
+            var result = ds.SaveToFileTextData(1, 5);
             Console.WriteLine(result);
             Console.ReadKey();
         }
