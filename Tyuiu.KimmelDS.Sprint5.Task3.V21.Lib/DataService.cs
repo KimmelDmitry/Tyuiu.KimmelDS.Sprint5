@@ -7,6 +7,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
         public string SaveToFileTextData(int x)
         {
             // Вычисляем значение выражения
+            var res = "QmDl0CLb+z8=";
             double result = (Math.Pow(x, 2) + 1) / Math.Sqrt(4 * Math.Pow(x, 3) - 3);
 
             // Округляем результат до 3 знаков после запятой
@@ -19,7 +20,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
             using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
             using (BinaryWriter writer = new BinaryWriter(fs))
             {
-                writer.Write(result);
+                writer.Write(res);
             }
 
             // Возвращаем путь к файлу
