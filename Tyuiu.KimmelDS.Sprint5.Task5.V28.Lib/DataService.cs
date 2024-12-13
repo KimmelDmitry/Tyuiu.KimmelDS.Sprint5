@@ -34,11 +34,18 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
                 .Select(n => n.Value)
                 .ToList();
 
+            // Проверка, что список не пустой
+            if (!numbers.Any())
+            {
+                throw new InvalidOperationException("В файле нет чисел.");
+            }
+
             // Находим наименьшее положительное целое число, которое делится на 5
             var minPositiveDivisibleBy5 = numbers
                 .Where(n => n > 0 && n % 5 == 0)
                 .Min();
 
+            // Если не нашли такого числа
             if (minPositiveDivisibleBy5 == null)
             {
                 throw new InvalidOperationException("В файле нет положительного числа, которое делится на 5.");
