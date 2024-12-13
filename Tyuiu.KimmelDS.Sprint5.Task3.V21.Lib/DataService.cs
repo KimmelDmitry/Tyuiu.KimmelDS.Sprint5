@@ -9,21 +9,18 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
             // Вычисляем значение выражения
             double result = (Math.Pow(x, 2) + 1) / Math.Sqrt(4 * Math.Pow(x, 3) - 3);
 
-            // Округляем результат до трёх знаков после запятой
+            // Округляем результат до 3 знаков после запятой
             result = Math.Round(result, 3);
 
-            // Генерируем путь для сохранения файла в Temp
+            // Генерируем путь для сохранения файла во временной директории
             string filePath = Path.Combine(Path.GetTempPath(), "OutPutFileTask3.bin");
 
-            // Сохраняем результат в бинарный файл
-            using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.Create)))
+            // Сохраняем значение в бинарный файл в формате IEEE 754 (double)
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+            using (BinaryWriter writer = new BinaryWriter(fs))
             {
                 writer.Write(result);
             }
-
-            // Выводим результат на консоль
-            Console.WriteLine($"Вычисленное значение: {result}");
-            Console.WriteLine($"Файл сохранен по пути: {filePath}");
 
             // Возвращаем путь к файлу
             return filePath;
