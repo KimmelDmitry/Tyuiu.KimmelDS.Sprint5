@@ -6,7 +6,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string filePath = "OutPutFileTask1.txt";
+            string filePath = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
