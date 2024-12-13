@@ -3,6 +3,7 @@ using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib
 {
+    
     public class DataService : ISprint5Task1V24
     {
         public string SaveToFileTextData(int startValue, int stopValue)
@@ -14,11 +15,11 @@ namespace Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib
             {
                 double result = CalculateFunction(x);
 
-                // Округляем до двух знаков
-                result = Math.Round(result, 2);
+                // Округляем до двух знаков и убираем лишние нули
+                string formattedResult = Math.Round(result, 2).ToString("G", System.Globalization.CultureInfo.InvariantCulture);
 
-                // Добавляем результат в строку с переносом
-                resultBuilder.AppendLine(result.ToString("F2").Replace('.', ','));
+                // Заменяем точку на запятую для соответствия требуемому формату
+                resultBuilder.AppendLine(formattedResult.Replace('.', ','));
             }
 
             // Возвращаем результат как строку
