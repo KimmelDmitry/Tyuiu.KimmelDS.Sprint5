@@ -6,7 +6,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            var path = $"{Directory.GetCurrentDirectory()}\\OutPutFileTask0.txt";
+            var path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
             var res = Math.Round(Math.Pow(x - 1, 3 * x + 1), 3);
             File.WriteAllText(path, res.ToString());
 
