@@ -3,19 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib", "Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib\Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib.csproj", "{BF14C26F-C5D3-436B-A37C-6524E223230E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib", "Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib\Tyuiu.KimmelDS.Sprint5.Task0.V27.Lib.csproj", "{BF14C26F-C5D3-436B-A37C-6524E223230E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27", "Tyuiu.KimmelDS.Sprint5.Task0.V27\Tyuiu.KimmelDS.Sprint5.Task0.V27.csproj", "{5C9F72DA-F34C-474E-889D-5ACA0FFA0C1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27", "Tyuiu.KimmelDS.Sprint5.Task0.V27\Tyuiu.KimmelDS.Sprint5.Task0.V27.csproj", "{5C9F72DA-F34C-474E-889D-5ACA0FFA0C1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27.Test", "Tyuiu.KimmelDS.Sprint5.Task0.V27.Test\Tyuiu.KimmelDS.Sprint5.Task0.V27.Test.csproj", "{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task0.V27.Test", "Tyuiu.KimmelDS.Sprint5.Task0.V27.Test\Tyuiu.KimmelDS.Sprint5.Task0.V27.Test.csproj", "{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib", "Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib\Tyuiu.KimmelDS.Sprint5.Task1.V24.Lib.csproj", "{62C26AD6-503B-4AB1-99CB-0557ACC51D87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task1.V24", "Tyuiu.KimmelDS.Sprint5.Task1.V24\Tyuiu.KimmelDS.Sprint5.Task1.V24.csproj", "{39E5D996-204F-41F9-86E6-9E5C58C4D43B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.KimmelDS.Sprint5.Task1.V24.Test", "Tyuiu.KimmelDS.Sprint5.Task1.V24.Test\Tyuiu.KimmelDS.Sprint5.Task1.V24.Test.csproj", "{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task0", "Task0", "{12935E5F-D706-49B1-A60D-56612F8B0019}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task1", "Task1", "{697E38E3-DAD8-4A8B-95BA-5C87098625B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BF14C26F-C5D3-436B-A37C-6524E223230E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +37,31 @@ Global
 		{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C26AD6-503B-4AB1-99CB-0557ACC51D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C26AD6-503B-4AB1-99CB-0557ACC51D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C26AD6-503B-4AB1-99CB-0557ACC51D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C26AD6-503B-4AB1-99CB-0557ACC51D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E5D996-204F-41F9-86E6-9E5C58C4D43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E5D996-204F-41F9-86E6-9E5C58C4D43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E5D996-204F-41F9-86E6-9E5C58C4D43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E5D996-204F-41F9-86E6-9E5C58C4D43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF14C26F-C5D3-436B-A37C-6524E223230E} = {12935E5F-D706-49B1-A60D-56612F8B0019}
+		{5C9F72DA-F34C-474E-889D-5ACA0FFA0C1D} = {12935E5F-D706-49B1-A60D-56612F8B0019}
+		{528F2CE9-8BA7-4C49-9D3D-75C5BDF08DDA} = {12935E5F-D706-49B1-A60D-56612F8B0019}
+		{62C26AD6-503B-4AB1-99CB-0557ACC51D87} = {697E38E3-DAD8-4A8B-95BA-5C87098625B1}
+		{39E5D996-204F-41F9-86E6-9E5C58C4D43B} = {697E38E3-DAD8-4A8B-95BA-5C87098625B1}
+		{C874FE9D-5CCB-4CC4-9F04-7FF2D07BC458} = {697E38E3-DAD8-4A8B-95BA-5C87098625B1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C71D119-CE45-47D4-B117-4D5059339003}
 	EndGlobalSection
 EndGlobal
