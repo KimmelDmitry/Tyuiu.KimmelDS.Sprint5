@@ -7,9 +7,9 @@ namespace Tyuiu.KimmelDS.Sprint5.Task2.V28.Lib
     {
         public string SaveToFileTextData(int[,] matrix)
         {
-            // Используем текущую директорию для сохранения файла
+            // Генерация пути к временной директории
             string fileName = "OutPutFileTask2.csv";
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            string filePath = Path.Combine(Path.GetTempPath(), fileName);
 
             // Создаем StringBuilder для формирования содержимого файла
             StringBuilder resultBuilder = new StringBuilder();
@@ -21,12 +21,9 @@ namespace Tyuiu.KimmelDS.Sprint5.Task2.V28.Lib
                 {
                     // Замена значений: положительное -> 1, отрицательное -> 0
                     if (matrix[i, j] > 0)
-                        matrix[i, j] = 1;
+                        resultBuilder.Append(1);
                     else
-                        matrix[i, j] = 0;
-
-                    // Добавляем элемент в StringBuilder
-                    resultBuilder.Append(matrix[i, j]);
+                        resultBuilder.Append(0);
 
                     // Добавляем разделитель ";" между элементами строки
                     if (j < matrix.GetLength(1) - 1)
@@ -37,7 +34,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task2.V28.Lib
                 resultBuilder.AppendLine();
             }
 
-            // Записываем данные в файл
+            // Записываем данные в файл в временную директорию
             File.WriteAllText(filePath, resultBuilder.ToString());
 
             // Возвращаем путь к файлу
