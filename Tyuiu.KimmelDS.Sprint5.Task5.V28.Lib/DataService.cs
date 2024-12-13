@@ -16,6 +16,13 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
             // Читаем все строки из файла
             string[] fileContent = File.ReadAllLines(path);
 
+            // Для отладки выводим все строки
+            Console.WriteLine("Содержимое файла:");
+            foreach (var line in fileContent)
+            {
+                Console.WriteLine(line);
+            }
+
             // Создаём список чисел, преобразуя строки в числа
             var numbers = fileContent
                 .Select(line => line.Trim())
