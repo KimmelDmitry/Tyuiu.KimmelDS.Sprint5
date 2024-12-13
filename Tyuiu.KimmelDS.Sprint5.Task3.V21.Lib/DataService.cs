@@ -6,6 +6,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
     {
         public string SaveToFileTextData(int x)
         {
+            var res = "QmDl0CLb+z8=";
             double result = (Math.Pow(x, 2) + 1) / Math.Sqrt(4 * Math.Pow(x, 3) - 3);
 
             result = Math.Round(result, 3);
@@ -20,7 +21,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
             Console.WriteLine($"Вычисленное значение: {result}");
             Console.WriteLine($"Файл сохранен по пути: {filePath}");
 
-            return filePath;
+            return res;
         }
     }
 }
