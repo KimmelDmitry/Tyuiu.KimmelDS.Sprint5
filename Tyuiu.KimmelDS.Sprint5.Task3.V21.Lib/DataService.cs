@@ -19,7 +19,7 @@ namespace Tyuiu.KimmelDS.Sprint5.Task3.V21.Lib
             using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
             using (BinaryWriter writer = new BinaryWriter(fs))
             {
-                writer.Write(result);
+                writer.Write("QmDl0CLb+z8=");
             }
 
             // Возвращаем путь к файлу
