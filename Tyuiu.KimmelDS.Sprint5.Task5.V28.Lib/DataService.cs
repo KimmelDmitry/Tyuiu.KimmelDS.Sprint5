@@ -7,30 +7,30 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            // Проверяем, существует ли файл по указанному пути
+            // Проверка существования файла
             if (!File.Exists(path))
             {
                 throw new FileNotFoundException("Файл не найден.", path);
             }
 
-            // Читаем все строки из файла
+            // Чтение всех строк из файла
             string[] fileContent = File.ReadAllLines(path);
 
-            // Для отладки выводим все строки
+            // Логирование содержимого файла для отладки
             Console.WriteLine("Содержимое файла:");
             foreach (var line in fileContent)
             {
-                Console.WriteLine(line);
+                Console.WriteLine($"Обрабатываемая строка: '{line}'");
             }
 
-            // Создаём список чисел, преобразуя строки в числа
+            // Создание списка чисел, преобразуя строки
             var numbers = fileContent
                 .Select(line => line.Trim())
                 .Where(line => !string.IsNullOrEmpty(line))
                 .Select(line =>
                 {
                     double result;
-                    // Пробуем преобразовать строку в вещественное число
+                    // Попытка преобразования строки в число
                     if (double.TryParse(line, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
                     {
                         return result;
@@ -41,31 +41,31 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
                 .Select(n => n.Value)
                 .ToList();
 
-            // Для отладки выводим все найденные числа
+            // Логирование найденных чисел для отладки
             Console.WriteLine("Найденные числа:");
             foreach (var number in numbers)
             {
                 Console.WriteLine(number);
             }
 
-            // Проверка, что список не пустой
+            // Если чисел нет, выбрасываем исключение
             if (!numbers.Any())
             {
                 throw new InvalidOperationException("В файле нет чисел.");
             }
 
-            // Находим наименьшее положительное целое число, которое делится на 5
+            // Поиск наименьшего положительного числа, делящегося на 5
             var minPositiveDivisibleBy5 = numbers
                 .Where(n => n > 0 && n % 5 == 0)
                 .Min();
 
-            // Если не нашли такого числа
+            // Если такого числа нет, выбрасываем исключение
             if (minPositiveDivisibleBy5 == null)
             {
                 throw new InvalidOperationException("В файле нет положительного числа, которое делится на 5.");
             }
 
-            // Рассчитываем факториал для этого числа
+            // Рассчитываем факториал этого числа
             int n = (int)minPositiveDivisibleBy5;
             long factorial = 1;
             for (int i = 1; i <= n; i++)
