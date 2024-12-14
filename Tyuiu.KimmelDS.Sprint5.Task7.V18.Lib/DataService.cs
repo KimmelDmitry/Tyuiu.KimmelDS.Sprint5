@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text.RegularExpressions;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KimmelDS.Sprint5.Task7.V18.Lib
 {
@@ -6,20 +7,32 @@ namespace Tyuiu.KimmelDS.Sprint5.Task7.V18.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string str = File.ReadAllText(path);
+            string pathSaveFile = Path.GetTempFileName();
 
-            string outputData = str.Replace("н", "нн");
+            FileInfo fileInfo = new FileInfo(pathSaveFile);
+            bool fileExists = fileInfo.Exists;
 
-            string outpath = $@"{Directory.GetCurrentDirectory()}\OutPutDataFileTask7V18.txt";
-
-            var fileinfo = new FileInfo(outpath);
+            if (fileExists)
             {
-                if (fileinfo.Exists)
-                    File.Delete(outpath);
-                File.AppendAllText(outpath, str);
+                File.Delete(pathSaveFile);
             }
 
-            return outpath;
+            string strLine = "";
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    strLine += line.Replace("н", "нн");
+
+                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                    strLine = "";
+                }
+            }
+
+            return pathSaveFile; ;
+
+            
         }
     }
 }
