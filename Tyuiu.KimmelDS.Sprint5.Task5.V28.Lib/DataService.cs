@@ -13,7 +13,9 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
             {
                 string line;
                 while ((line = rd.ReadLine()) != null)
-                    numbers.Add(Convert.ToDouble(line));
+                {
+                    numbers.Add(double.Parse(line, CultureInfo.InvariantCulture));
+                }
             }
 
             var minPositiveDivisibleBy5 = numbers
