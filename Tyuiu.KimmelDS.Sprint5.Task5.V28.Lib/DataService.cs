@@ -7,24 +7,24 @@ namespace Tyuiu.KimmelDS.Sprint5.Task5.V28.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            Console.WriteLine(path);
-            string[] fileContent = File.ReadAllLines(path);
-
             var numbers = new List<double>();
-            foreach (string line in fileContent)
-                numbers.Add(double.Parse(line));
+            //reading
+            using (var rd = new StreamReader(path))
+            {
+                string line;
+                while ((line = rd.ReadLine()) != null)
+                    numbers.Add(Convert.ToDouble(line));
+            }
 
             var minPositiveDivisibleBy5 = numbers
                 .Where(n => n > 0 && n % 5 == 0)
                 .Min();
 
+            var n = (int)minPositiveDivisibleBy5;
 
-            int n = (int)minPositiveDivisibleBy5;
             long factorial = 1;
             for (int i = 1; i <= n; i++)
-            {
                 factorial *= i;
-            }
 
             Console.WriteLine($"Факториал числа {n} = {factorial}");
 
