@@ -6,24 +6,20 @@ namespace Tyuiu.KimmelDS.Sprint5.Task7.V18.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string inputData;
-            using (var reader = new StreamReader(path))
+            string str = File.ReadAllText(path);
+
+            string outputData = str.Replace("н", "нн");
+
+            string outpath = $@"{Directory.GetCurrentDirectory()}\OutPutDataFileTask7V18.txt";
+
+            var fileinfo = new FileInfo(outpath);
             {
-                inputData = reader.ReadToEnd();
+                if (fileinfo.Exists)
+                    File.Delete(outpath);
+                File.AppendAllText(outpath, str);
             }
 
-            string outputData = inputData.Replace("н", "нн");
-
-            
-            using (var fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                using (var writer = new StreamWriter(fs))
-                {
-                    writer.Write(outputData);
-                }
-            }
-
-            return path;
+            return outpath;
         }
     }
 }
